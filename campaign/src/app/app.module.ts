@@ -8,6 +8,13 @@ import { provideHttpClient } from '@angular/common/http';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DropdownModule } from 'primeng/dropdown';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { InputSwitchModule } from 'primeng/inputswitch';
+import { TooltipModule } from 'primeng/tooltip';
+
+
 
 @NgModule({
   declarations: [
@@ -19,7 +26,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ButtonModule,
     InputTextModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DropdownModule,
+    CalendarModule,
+    InputTextareaModule,
+    InputSwitchModule,
+    TooltipModule
   ],
   providers: [
     provideAnimations(),

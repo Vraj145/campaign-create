@@ -1,8 +1,113 @@
+<div class="p-3 flex col-12 align-items-center text-black header" style="background-color: #f9f9f9;">
+  <div class="ml-3 text-medium-700">Create Campaign</div> 
+</div>
 <div class="card">
-  <div class="p-3 flex align-items-center text-white header" style="background-color: #8800cc;">
-     <div class="ml-3 text-medium-700">{{title}}</div> 
+  <div class="surface-card pl-2 pt-5 shadow-0 border-round">
+    <div class="grid formgrid p-fluid">
+
+      <!-- Parent Container for Internal Title and Subject -->
+      <div class="col-12 sm:col-12 md:col-12 lg:col-12 xl:col-12">
+        <!-- Internal Title -->
+        <div class="field mb-4 pl-4">
+          <label for="internalTitle">Internal Title (Visible only to you)</label>
+          <input pInputText id="internalTitle" placeholder="Internal Title" aria-describedby="internalTitleHelp" />
+          <small class="pt-2" id="internalTitleHelp">
+            Maximum 150 characters allowed
+          </small>
+        </div>
+
+        <!-- Subject -->
+        <div class="field mb-4 pl-4">
+          <label for="subject">Subject</label>
+          <input pInputText id="subject" placeholder="Subject" aria-describedby="subjectHelp" />
+          <small class="pt-2" id="subjectHelp">
+            Maximum 150 characters allowed
+          </small>
+        </div>
+        <!-- Email -->
+        <div class="field mb-4 pl-4">
+          <label for="email">Select Sender Email</label>
+          <p-dropdown  optionLabel="email" id="email"
+          placeholder="Please Select Sender Email" />
+          
+        </div>
+      </div>
+
+      <div class="col-12 sm:col-12 md:col-12 lg:col-6 xl:col-6">
+        <div class="field mb-4 pl-4">
+          <label for="enevnt type">Select Event Type</label>
+          <p-calendar  [showIcon]="true" id="enevnt type" placeholder="Please Select Event Type" hourFormat="24"  [showOnFocus]="false"  inputId="buttondisplay" />
+        </div>
+      </div>
+      <div class="col-12 sm:col-12 md:col-12 lg:col-6 xl:col-6">
+        <div class="field mb-4 pl-4">
+          <label for="date">Event End Date & Time</label>
+          <p-calendar  [showIcon]="true" id="date" placeholder="Please Select Event Date" hourFormat="24"  [showOnFocus]="false"  inputId="buttondisplay" />
+        </div>
+      </div>
+
+      <div class="p-fluid col-12">
+        <div class="p-field mb-4 pl-4 ">
+          <label for="description">Calendar Invite Description</label>
+          <textarea  id="description"  rows="2" pInputText class="p-inputtextarea w-full" aria-describedby="description-detail"> </textarea>
+          <small id="description-detail">
+            Maximum 1500 characters allowed
+          </small>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="p-fluid p-field  mb-4 pl-4">
+          <label for="emailBody">Email Body</label>
+          <textarea  id="emailBody"  rows="10"  pInputTextarea  class="w-full" placeholder="Write your email content here...">
+          </textarea>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div class="p-card" style="border: 1px solid #ccc; border-radius: 8px; padding: 1rem; margin-left: 25px;">
+      <div class="p-field p-grid flex justify-content-between">
+      
+        <div class="p-col-12 p-md-6">
+          <div class="p-d-flex p-ai-center" style="align-items: center;">
+            <i class="pi pi-wallet" style="font-size: 1.5rem; margin-right: 8px;"></i>
+            <label for="google-wallet" class="p-mr-2">Google Wallet</label>
+            <p-inputSwitch id="google-wallet" name="googleWalletValue" [ngStyle]="{'margin-top': '0.5rem'}"></p-inputSwitch>
+
+          </div>
+        </div>
+        
+        <!-- Apple Wallet Switch -->
+        <div class="p-col-12 p-md-6">
+          <div class="p-d-flex p-ai-center" style="align-items: center;">
+            <i class="pi pi-wallet" style="font-size: 1.5rem; margin-right: 8px;"></i> 
+            <label for="apple-wallet" class="p-mr-2">Apple Wallet</label>
+            <p-inputSwitch id="google-wallet" name="googleWalletValue" [ngStyle]="{'margin-top': '0.5rem'}"></p-inputSwitch>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <div class="p-fluid p-field  mb-4 pl-4 mt-3">
+        <label for="Widget ">Add to Calendar Widget (for Landing Pages and Emails)</label>
+        <p-inputSwitch id="Widget " name="googleWalletValue" [ngStyle]="{'margin-top': '0.5rem'}"></p-inputSwitch> 
+        <button pButton   pTooltip='Add a "Add to Calender button to your emails and event registration (thank you) pages."'   tooltipPosition="top"   icon="pi pi-info-circle"   style="background-color: rgb(101, 94, 94); color: white; border-radius: 50%; padding: 10px; height: 40px; width: 40px; border: none; margin-left: 10px;">
+    </button>
+      </div>
+    </div>
+    
+    
+
+    <!-- Buttons -->
+    <div class="flex gap-3 align-items-center justify-content-center">
+      <button pButton pRipple label="Submit" class="p-button-success" style="background-color: black; color: white; width: 300px;"></button>
+    </div>
   </div>
+  
 </div>
-<div class="p-2">
-  <router-outlet></router-outlet>
-</div>
+
+
